@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-image: url(../imagenes/fondo1.jpg);
+}
+
+h1 {
+	font-size: 3.5rem;
+}
+
+
+.gridContainer{
+	width: 100vw;
+	height: auto;
+	min-width: 280px;
+	display: grid;
+	grid-template-columns: repeat (1, 1fr) ;
+	grid-template-rows: auto;
+	grid-template-areas: "encabezado encabezado"
+						"main main" 
+						"zapato zapato";
+
+}
+
+
+
+
+
+.gridContainer main{
+	grid-area: main;
+	width: 100vw;
+}
+
+
+
+
+/* ------------------------------- encabezado ------------------------------- */
+
+
+.gridContainer .encabezado{
+	grid-area: encabezado;
+	width: 100vw;
+}
+
+.encabezado nav {
+	background-color: rgba(243, 220, 241, 0.5);
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-around;
+	justify-content: flex-start;
+	flex-direction: row;
+	align-items: center;
+}
+
+
+.encabezado nav a img {
+	width: 110px;
+	height: 110px;
+	margin: 0 auto;
+}
+
+.encabezado nav a {
+	text-decoration: none;
+	color: black;
+}
+
+
+.encabezado nav ul {
+	list-style: none;
+	display: inline-block;
+}
+
+
+.encabezado nav ul li {	
+	font-size: medium;
+	display: inline-block;
+	margin: 1rem auto;
+	padding: 10px 30px;
+
+
+}
+
+.encabezado nav ul li a {
+	text-decoration: none;
+	color: grey;
+}
+
+
+.encabezado nav ul li a:hover {
+	font-weight: 800;
+	color: #EA0EF2;
+}
+
+
+
+
+
+
+/* ---------------------------------- index --------------------------------- */
+.index {
+	text-align: center;
+
+}
+
+
+/* -------------------------------- principal ------------------------------- */
+main div {
+	display: flex;
+	margin: 10px auto;
+	padding: 20px 30px;
+	box-sizing: border-box;
+	flex-direction: column;
+	align-items: center;
+}
+
+.img{
+	display: flex;
+	flex-direction: row;
+    justify-content: center;
+	
+
+
+}
+
+/* ------------------------------ quienes somos ----------------------------- */
+.mainQuienes {
+	text-align: center;
+	width: 100vw;
+
+}
+
+.mainQuienes img {
+	width: 40vw;
+	align-items: center;
+}
+
+
+
+.somos h2 {
+	margin-top: 50px;
+
+}
+
+
+.somos p {
+	text-align: center;
+	font-size: large;
+
+}
+	
+
+/* .imagen{
+	width: 40%;
+	margin-left: 25%;
+} */
+
+
+/* ------------------------------- servicios adicionales ------------------------------ */
+main h2{
+	text-align: center;
+	font-size: 3.5rem;
+}
+
+main {
+	font-size: 1.5rem;
+	color: grey#323131;
+	font-weight: 300;
+	line-height: 2.4rem;
+}
+
+div main div b{
+	font-size: 1.9rem;
+	margin-top:1.3rem ;
+}
+
+.principal section ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	
+
+}
+
+.servicio{
+	display: flex;
+	flex-direction: row;
+}
+
+.souvenir{
+	background-color: rgba(243, 220, 241, 0.5);
+	border: solid;
+	border-radius: 10px;
+	width: 550px;
+	height: auto;
+	font-size: 2.3rem;
+	line-height: 3.5rem;
+
+}
+
+
+.extras{
+	background-color: rgba(243, 220, 241, 0.5);
+	border: solid;
+	border-radius: 10px;
+	padding-left: 0;
+	font-size: 2.3rem;
+	line-height: 3.5rem;
+
+}
+
+/* ------------------------------- que hacemos ------------------------------ */
+.container1{
+	display: flex;
+	flex-direction: row;
+}
+
+.container2{
+	background-color: rgba(243, 220, 241, 0.5);
+	border: solid;
+	border-radius: 10px;
+	width: 550px;
+	height: auto;
+	font-size: 2.3rem;
+	line-height: 4rem;
+}
+
+.container3{
+	background-color: rgba(243, 220, 241, 0.5);
+	border: solid;
+	border-radius: 10px;
+	width: 550px;
+	height: auto;
+	font-size: 2.3rem;
+	line-height: 3.8rem;
+}
+
+
+/* --------------------------------- galeria -------------------------------- */
+
+
+.galeria img {
+	width: 150px;
+	margin: 5px;
+	border: 2px solid darkviolet;
+}
+
+header img {
+	width: 50%;
+}
+.index {
+	height: 80vh;
+	animation-name: animateGaleria;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-delay: 1s;
+	animation-timing-function: ease;
+	background-size: cover;
+
+}
+
+@keyframes animateGaleria {
+	0%{background-image: url(../imagenes/tragos.jpeg)}
+	30%{background-image: url(../imagenes/pepino.jpeg)}
+	60%{background-image: url(../imagenes/pintando.jpeg)}
+	100%{background-image: url(../imagenes/uniforme.jpeg);}
+}
+
+/* ------------------------------- formulario ------------------------------- */
+
+main h2 {
+	margin: 1%;
+	font-size: x-large;
+	text-align: center;
+	margin-top: 2px;
+	margin-bottom: 20px;
+}
+
+.mainForm {
+	font-size: medium;
+	width: 30%;
+	background-color: rgb(217, 245, 247);
+	padding: 1%;
+	margin: 30%;
+	margin-top: 0.5%;
+	border-radius: 10%;
+	border: rgb(224, 17, 197) 5px solid;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.gridContainer .main2{
+	width: 35%;
+	padding: 1%;
+	margin: auto;
+	margin-top: 5%;
+
+
+}
+
+
+.form__imput {
+	padding: 5%;
+	width: 150%;
+    margin-right: 500%;
+	margin-left: -20%;
+	font-weight: bold;
+	line-height: 170%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-self: center;
+	
+
+}
+
+.form__imput input {
+	padding: 2.3%;
+	margin:  0%;
+	width: 80%;
+	border: none;
+	border-bottom: rgb(224, 17, 197) 3px solid;
+	background-color: transparent;
+	background: linear-gradient(to bottom, transparent, #e248e7);
+	outline: none;
+}
+
+.form__imput textarea {
+	border: none;
+	border-bottom: rgb(224, 17, 197) 3px solid;
+	background-color: rgb(198, 230, 241);
+	background: linear-gradient(to bottom, transparent, #e248e7);
+	resize: none;
+	width: 100%;
+
+}
+.borde{
+	width: 80%;
+}
+
+/* --------------------------------- footer --------------------------------- */
+
+
+.gridContainer .zapato{
+	background-color: rgba(233, 162, 162, 0.5);
+	display: flex;
+	/* justify-content: space-around; */
+	align-self: center;
+	margin-top: 20px;
+	grid-area: zapato;
+	width: 100vw;
+	
+	
+	
+}
+
+
+
+.pie__icono--sm {
+	width: 10%;
+	height: auto;
+
+	
+}
+
+
+.zapato h3 {
+	font-size: 2rem;
+	
+
+}
+
+.pie ul li {
+	list-style: none;
+	display: inline;
+	margin
+	
+
+}
+
+footer div h3 {
+	/* margin-left: 4%; */
+
+}
+footer div h3 {
+	margin-left: 80px; 
+
+}
+
+.maps {
+	width: 50vw;
+	margin-left: 1%;
+}
+
+.pie{
+	margin-left: 300px;
+	width: 50vw;
+	
+	
+}
+
+
+/* ------------------------ comienzo de media queries ----------------------- */
+
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+	.gridContainer {
+		width: 100vw;
+		
+		
+		
+	}
+
+.mainQuienes img {
+	width: 80vw;
+}
+
+.index img {
+	width: 80vw;
+
+}
+
+.principal {
+	display:flex;
+	flex-direction: column;
+	align-self: center;
+	
+}
+.container1{
+	display: flex;
+	flex-direction: column;
+}
+.servicio{
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+}
+.gridContainer .main2 {
+	width: 70vw;
+	margin: 0 auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+.form__imput{
+	margin-left: -30%;
+}
+
+.galeria img {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	
+	
+}
+
+.gridContainer .zapato{
+	display: grid;
+	grid-template-areas: "maps"
+						"pie";
+	/* justify-content: center; */
+	width: 150%;
+	margin-bottom: 0;
+	margin-left: 0 ;
+	
+}
+
+.pie {
+	margin-left: -50px; 
+	margin-top: 50px;  
+	display: flex;
+	align-items: flex-end;
+	grid-area: pie;
+	
+}
+.maps{
+	grid-area: maps;
+}
+.pie__icono--sm {
+	width: 32%;
+	margin-bottom: 10%;
+	
+
+}
+}
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { }
+
+
+
+
+
+
