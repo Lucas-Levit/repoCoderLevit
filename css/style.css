@@ -255,7 +255,7 @@ div main div b{
 header img {
 	width: 50%;
 }
-/* .index {
+.index {
 	height: 80vh;
 	animation-name: animateGaleria;
 	animation-duration: 10s;
@@ -271,7 +271,7 @@ header img {
 	30%{background-image: url(../imagenes/pepino.jpeg)}
 	60%{background-image: url(../imagenes/pintando.jpeg)}
 	100%{background-image: url(../imagenes/uniforme.jpeg);}
-} */
+}
 
 /* ------------------------------- formulario ------------------------------- */
 
