@@ -6,15 +6,15 @@
 
 html {
 	font-size: 62.5%;
-}
+} 
 
 body {
 	background-image: url(../imagenes/fondo1.jpg);
 }
 
-h1 {
+/* h1 {
 	font-size: 3.5rem;
-}
+} */
 
 
 .gridContainer{
@@ -33,12 +33,11 @@ h1 {
 
 
 
-
 .gridContainer main{
 	grid-area: main;
 	width: 100vw;
-}
-
+	
+} 
 
 
 
@@ -50,7 +49,27 @@ h1 {
 	width: 100vw;
 }
 
-.encabezado nav {
+.logo{
+	width: 33%;
+}
+
+.gridContainer .nav-item .nav-link:hover {
+	color: #EA0EF2;
+	
+}
+
+
+
+.gridContainer .container-fluid {
+	background-color: rgba(243, 220, 241, 0.5);
+}
+
+.gridContainer .navbar-brand {
+	font-size: 3rem;
+}
+
+
+/* .encabezado {
 	background-color: rgba(243, 220, 241, 0.5);
 	display: flex;
 	flex-wrap: wrap;
@@ -58,10 +77,8 @@ h1 {
 	justify-content: flex-start;
 	flex-direction: row;
 	align-items: center;
-}
-
-
-.encabezado nav a img {
+} */
+/* .encabezado nav a img {
 	width: 110px;
 	height: 110px;
 	margin: 0 auto;
@@ -97,7 +114,7 @@ h1 {
 .encabezado nav ul li a:hover {
 	font-weight: 800;
 	color: #EA0EF2;
-}
+}   */
 
 
 
@@ -105,11 +122,15 @@ h1 {
 
 
 /* ---------------------------------- index --------------------------------- */
-.index {
+/* .index {
 	text-align: center;
+	
+} */
 
+.carousel-inner{
+	width: 100vw;
+	height: 70vw;
 }
-
 
 /* -------------------------------- principal ------------------------------- */
 main div {
@@ -146,16 +167,18 @@ main div {
 
 .somos h2 {
 	margin-top: 50px;
+	font-size: 3rem;
 
 }
 
 
 .somos p {
 	text-align: center;
-	font-size: large;
+	font-size: 2rem;
+	line-height: 3rem;
 
-}
-	
+}  
+
 
 /* .imagen{
 	width: 40%;
@@ -164,11 +187,14 @@ main div {
 
 
 /* ------------------------------- servicios adicionales ------------------------------ */
-main h2{
+.main h2{
 	text-align: center;
-	font-size: 3.5rem;
+	font-size: 3rem;
 }
-
+.main h3{
+	font-size: 2.7rem;
+	margin-bottom: 7%;
+}
 main {
 	font-size: 1.5rem;
 	color: grey#323131;
@@ -176,18 +202,15 @@ main {
 	line-height: 2.4rem;
 }
 
-div main div b{
-	font-size: 1.9rem;
-	margin-top:1.3rem ;
-}
+
 
 .principal section ul {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
 	
-
 }
+
 
 .servicio{
 	display: flex;
@@ -242,11 +265,17 @@ div main div b{
 	line-height: 3.8rem;
 }
 
+div main div b{
+	font-size: 1.9rem;
+	margin-top: 1.3rem ;
+}
 
 /* --------------------------------- galeria -------------------------------- */
 
 
-.galeria img {
+	
+
+/* .galeria img {
 	width: 150px;
 	margin: 5px;
 	border: 2px solid darkviolet;
@@ -271,13 +300,18 @@ header img {
 	30%{background-image: url(../imagenes/pepino.jpeg)}
 	60%{background-image: url(../imagenes/pintando.jpeg)}
 	100%{background-image: url(../imagenes/uniforme.jpeg);}
-}
+} */
 
 /* ------------------------------- formulario ------------------------------- */
 
+.gridContainer .form__imput legend{
+	font-size: 18px;
+	margin-bottom: 10%;
+}
+
 main h2 {
 	margin: 1%;
-	font-size: x-large;
+	font-size: 30px;
 	text-align: center;
 	margin-top: 2px;
 	margin-bottom: 20px;
@@ -367,18 +401,20 @@ main h2 {
 	
 }
 
-
+div nav div a {
+	font-size: medium;
+}
 
 .pie__icono--sm {
 	width: 10%;
 	height: auto;
-
 	
 }
 
 
 .zapato h3 {
 	font-size: 2rem;
+	margin-top: 1.5rem;
 	
 
 }
@@ -386,13 +422,13 @@ main h2 {
 .pie ul li {
 	list-style: none;
 	display: inline;
-	margin
+	
 	
 
 }
 
 footer div h3 {
-	/* margin-left: 4%; */
+	margin-left: 4%;
 
 }
 footer div h3 {
@@ -403,6 +439,7 @@ footer div h3 {
 .maps {
 	width: 50vw;
 	margin-left: 1%;
+	
 }
 
 .pie{
@@ -410,7 +447,7 @@ footer div h3 {
 	width: 50vw;
 	
 	
-}
+} 
 
 
 /* ------------------------ comienzo de media queries ----------------------- */
@@ -449,14 +486,21 @@ footer div h3 {
 	flex-direction: column;
 	align-self: center;
 }
+
 .gridContainer .main2 {
-	width: 70vw;
-	margin: 0 auto;
-	margin-top: 5%;
-	margin-bottom: 5%;
+	width: 95%;
+	padding: 0;
+	margin: auto;
+	margin-top: 10%;
 }
-.form__imput{
-	margin-left: -30%;
+
+.gridContainer .main2 h2 {
+	font-size: 26px;
+}
+
+.gridContainer .form__imput legend{
+	font-size: 18.5px;
+	margin-bottom: 7%;
 }
 
 .galeria img {
@@ -470,7 +514,7 @@ footer div h3 {
 .gridContainer .zapato{
 	display: grid;
 	grid-template-areas: "maps"
-						"pie";
+						"pie"; 
 	/* justify-content: center; */
 	width: 150%;
 	margin-bottom: 0;
@@ -490,7 +534,7 @@ footer div h3 {
 	grid-area: maps;
 }
 .pie__icono--sm {
-	width: 32%;
+	width: 30%;
 	margin-bottom: 10%;
 	
 
