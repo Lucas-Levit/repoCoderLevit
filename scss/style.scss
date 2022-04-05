@@ -1,0 +1,114 @@
+@import "_variables.scss";
+@import "_navBar.scss";
+@import "_footer.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+* {
+	margin: 0;
+    padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+} 
+
+body {
+	background-image: url(../imagenes/fondo1.jpg);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ---------------------------------- grid ---------------------------------- */
+
+.gridContainer{
+    width: $ancho;
+	height: 100vh;
+	min-width: 280px;
+	display: grid;
+	grid-template-columns: repeat (1, 1fr) ;
+	grid-template-rows: auto;
+	grid-template-areas: "encabezado encabezado"
+						"main main" 
+						"zapato zapato";
+    
+    .main{
+        grid-area: main;
+        width: $ancho;
+    }
+}
+
+/* ---------------------------------- index --------------------------------- */
+
+.carousel-iner{
+    width: $ancho;
+    height: 50vh;
+}
+/* ------------------------------ quienes somos ----------------------------- */
+
+.mainQuienes{
+    text-align: $centro;
+	width: 100vw;
+
+    img{
+        width: 40vw;
+        align-items: $centro;
+    }
+    .somos{
+        h2{
+            margin-top: 50px;
+            font-size: 3rem;
+        }
+        p{
+            text-align: $centro;
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+    }
+}
+
+/* -------------------------- servicios adicionales ------------------------- */
+.principal section ul{
+display: flex;
+flex-direction: column;
+}
+
+.main{
+    font-size: 1.5rem;
+	color: black;
+	font-weight: 300;
+	line-height: 2.4rem;
+    h2{
+        text-align: center;
+        font-size: 3rem;
+    }
+    h3{
+        font-size: 2.7rem;
+        margin-bottom: 7%;
+    }
+}
+
+    .servicio{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+    }
+        .souvenir{
+            background-color: $color;
+            border: solid;
+            border-radius: 1rem;
+            max-width: 100%;
+            font-size: 2.3rem;
+            line-height: 3.5rem;
+            margin: 1rem auto;
+            padding: 2rem 3rem;
+            }
+        .extras{
+            background-color: $color;
+            border: solid;
+            border-radius: 1rem;
+            font-size: 2.3rem;
+            line-height: 3.5rem;
+            max-width: 100%;
+            margin: 1rem auto;
+            padding: 2rem 3rem;
+            }
+

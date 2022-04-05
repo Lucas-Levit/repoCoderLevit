@@ -1,0 +1,26 @@
+{
+  "name": "repocoderlevit",
+  "version": "1.0.0",
+  "description": "mi proyecto",
+  "main": "index.js",
+  "scripts": {
+    "test": "1",
+    "build-css": "node-sass --include-path scss scss/style.scss css/style.css",
+
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucas-Levit/repoCoderLevit.git"
+  },
+  "author": "Lucas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucas-Levit/repoCoderLevit/issues"
+  },
+  "homepage": "https://github.com/Lucas-Levit/repoCoderLevit#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.15"
+  }
+}

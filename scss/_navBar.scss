@@ -1,0 +1,25 @@
+.gridContainer{
+    .encabezado{
+        grid-area: encabezado;
+        width: 100vw;
+        }
+        .container-fluid{
+            background-color: rgba(243, 220, 241, 0.5);
+        }
+            .navbar-brand{
+                font-size: 3rem;
+            }
+            .nav-item{
+                font-size: 1.5rem;
+            
+            
+                .nav-link{
+                    &:hover{
+                    color: #EA0EF2;
+                    }
+                    }
+                    }
+                    }
+            .logo{
+                width: 33%;
+            }
