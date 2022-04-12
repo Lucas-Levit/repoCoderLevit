@@ -1,3 +1,19 @@
 $ancho:100vw;
 $centro:center;
 $color: rgba(243, 220, 241, 0.5);
+
+@mixin d-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin d-column {
+    display: flex;
+    flex-direction: column;
+}
+
+$border-radius: (
+    'br1' : 1rem,
+    'br2' : 1.1rem,
+    'br3' : 10rem,
+);

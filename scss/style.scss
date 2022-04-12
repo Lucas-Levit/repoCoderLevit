@@ -23,6 +23,7 @@ body {
     width: $ancho;
 	height: 100vh;
 	min-width: 280px;
+    overflow-x: hidden;
 	display: grid;
 	grid-template-columns: repeat (1, 1fr) ;
 	grid-template-rows: auto;
@@ -37,10 +38,13 @@ body {
 }
 
 /* ---------------------------------- index --------------------------------- */
-
-.carousel-iner{
-    width: $ancho;
-    height: 50vh;
+.gridContainer{
+    .carousel-item{
+        img{
+            height: 80vh;
+            object-fit: cover;
+    }
+}
 }
 /* ------------------------------ quienes somos ----------------------------- */
 
@@ -61,17 +65,17 @@ body {
             text-align: $centro;
             font-size: 2rem;
             line-height: 3rem;
+            padding: 0 3rem;
         }
     }
 }
 
 /* -------------------------- servicios adicionales ------------------------- */
 .principal section ul{
-display: flex;
-flex-direction: column;
+@include d-column;
 }
 
-.main{
+.principal{
     font-size: 1.5rem;
 	color: black;
 	font-weight: 300;
@@ -79,6 +83,7 @@ flex-direction: column;
     h2{
         text-align: center;
         font-size: 3rem;
+        margin-bottom: 2rem;
     }
     h3{
         font-size: 2.7rem;
@@ -87,14 +92,13 @@ flex-direction: column;
 }
 
     .servicio{
-        display: flex;
-        flex-direction: row;
+        @include d-row;
         width: 100vw;
     }
         .souvenir{
             background-color: $color;
             border: solid;
-            border-radius: 1rem;
+            border-radius: map-get($map:$border-radius, $key:br1 );
             max-width: 100%;
             font-size: 2.3rem;
             line-height: 3.5rem;
@@ -102,13 +106,211 @@ flex-direction: column;
             padding: 2rem 3rem;
             }
         .extras{
-            background-color: $color;
-            border: solid;
-            border-radius: 1rem;
-            font-size: 2.3rem;
-            line-height: 3.5rem;
-            max-width: 100%;
-            margin: 1rem auto;
-            padding: 2rem 3rem;
+            @extend .souvenir;
             }
 
+/* ------------------------------- que hacemos ------------------------------ */
+
+.principal .textContent{
+    text-align: $centro;
+    margin: 2rem 0;
+    b{
+    font-size: 1.9rem;
+	margin-top: 5rem;
+
+
+}
+}
+    .container1{
+        @include d-row;
+    }
+        .container2{
+            background-color: rgba(243, 220, 241, 0.5);
+            border: solid;
+            border-radius: map-get($map:$border-radius, $key:br2 );
+            width: 55rem;
+            height: auto;
+            font-size: 2.3rem;
+            line-height: 4rem;
+            margin: 1rem auto;
+            padding:2rem 3rem;
+        }
+        .container3{
+        @extend .container2;
+        line-height: 3.8rem;
+        padding:2rem 4rem;
+            }
+
+    /* --------------------------------- galeria -------------------------------- */
+
+.galeria{
+    height: 50vh;
+	max-width: 30%;
+	margin:0 auto;
+	margin-top: 2rem;
+	animation-name: animateGaleria;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-delay: 1s;
+	animation-timing-function: ease;
+	background-size: cover;
+}
+    @keyframes animateGaleria {
+        0%{background-image: url(../imagenes/dedos.jpg)}
+        25%{background-image: url(../imagenes/espejo.jpg)}
+        50%{background-image: url(../imagenes/reunion.jpg)}
+        75%{background-image: url(../imagenes/vasos.jpg)}
+        100%{background-image: url(../imagenes/mesa.jpg);}
+} 
+
+
+/* ------------------------------- formulario ------------------------------- */
+
+.gridContainer{
+    .mainform{
+    width: 80vw;
+	padding: 1%;
+	margin: auto;
+	margin-top: 5%;
+    }
+    .form__imput legend{
+        font-size: 2.5rem;
+        margin-bottom: 4%;
+    }
+}
+.mainForm{
+    h2{
+        margin: 1rem;
+        font-size: 4.5rem;
+        text-align: center;
+        margin-top: 0.2rem;
+        margin-bottom: 2rem;
+    }
+    form{
+        font-size: medium;
+        width: 50%;
+        background-color: rgb(217, 245, 247);
+        border-radius: map-get($map: $border-radius, $key:br3 );
+        border: rgb(224, 17, 197) 5px solid;
+        margin: 0 auto;
+    }
+}
+.form__imput{
+    padding: 2rem;
+	width: 80%;
+	font-weight: bold;
+	display: block;
+	margin: 0 auto;
+    label{
+        margin-top: 2rem;
+        font-size: 2.3rem;
+    }
+    input{
+        padding: 1.5rem;
+        margin-top: 2rem;
+        width: 100%;
+        border: none;
+        border-bottom: rgb(224, 17, 197) 3px solid;
+        background-color: transparent;
+        background: linear-gradient(to bottom, transparent, #e248e7);
+        outline: none;
+        }
+        textarea{
+            border: none;
+            border-bottom: rgb(224, 17, 197) 3px solid;
+            background-color: rgb(198, 230, 241);
+            background: linear-gradient(to bottom, transparent, #e248e7);
+            resize: none;
+            width: 100%;
+        }
+    }
+
+.borde{
+    width: 50%;
+    margin: 0 auto;
+    
+}
+
+/* ------------------------ comienzo de media queries ----------------------- */
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+	.gridContainer {
+		width: 100vw;
+        .mainForm{
+            width: 100vw;
+            h2{
+                font-size: 4rem;
+            }
+        }
+        .form__imput legend{
+            font-size: 2.5rem;
+        }
+	}
+    .mainQuienes img {
+        width: 80vw;
+    }
+    .principal {
+        @include d-column;
+        align-self: center;
+        
+    }
+    .container1{
+        @include d-column
+    }
+    .servicio{
+        @include d-column;
+        align-self: center;
+    }
+    .mainForm form {
+        width: 100%;
+    }
+    .borde{
+        width: 100%;
+    }
+
+}
+/* // X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	.gridContainer {
+		width: 100vw;
+	
+    .container1{
+        @include d-column;
+        width: 100vw;
+    }
+    .container2, .container3{
+        width: 100%;
+        
+    }
+    .mainQuienes img{
+        width: 100vw;
+        height: 18vh;
+    }
+    .mainForm .form__imput {
+        width: 100%;
+    }
+    .galeria{
+        max-width: 100%;
+        margin: auto;
+    }
+    .zapato{
+        width: 100vw;
+        @include d-column;
+        justify-content: center;
+        .pie{
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .maps{
+            width: 100%;
+        }
+    }
+    
+    .maps iframe{
+        width: 100%;
+    }
+}
+}
