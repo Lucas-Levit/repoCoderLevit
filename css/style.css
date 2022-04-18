@@ -1,16 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 .gridContainer .encabezado {
   grid-area: encabezado;
-  width: 100vw; }
+  width: 100vw;
+  font-size: 7rem; }
 
 .gridContainer .container-fluid {
   background-color: rgba(243, 220, 241, 0.5); }
 
-.gridContainer .navbar-brand {
-  font-size: 3rem; }
-
-.gridContainer .nav-item {
-  font-size: 1.5rem; }
+.gridContainer .nav-item .nav-link {
+  font-size: 2rem; }
   .gridContainer .nav-item .nav-link:hover {
     color: #EA0EF2; }
 
@@ -72,17 +70,21 @@ body {
   display: grid;
   grid-template-columns: repeat 1, 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "encabezado encabezado"
- "main main" 
- "zapato zapato"; }
+  grid-template-areas: "encabezado encabezado" "main main"  "zapato zapato"; }
   .gridContainer .main {
     grid-area: main;
     width: 100vw; }
 
 /* ---------------------------------- index --------------------------------- */
-.gridContainer .carousel-item img {
-  height: 80vh;
-  object-fit: cover; }
+.gridContainer .carousel-item {
+  width: 100vw; }
+  .gridContainer .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%; }
+
+.gridContainer .phone {
+  display: none; }
 
 /* ------------------------------ quienes somos ----------------------------- */
 .mainQuienes {
@@ -92,13 +94,15 @@ body {
     width: 40vw;
     align-items: center; }
   .mainQuienes .somos h2 {
-    margin-top: 50px;
-    font-size: 3rem; }
+    margin-top: 5rem;
+    font-size: 3rem;
+    margin-bottom: 2rem; }
   .mainQuienes .somos p {
     text-align: center;
     font-size: 2rem;
-    line-height: 3rem;
-    padding: 0 3rem; }
+    line-height: 2rem;
+    padding: 0 3rem;
+    margin-top: 0.3rem; }
 
 /* -------------------------- servicios adicionales ------------------------- */
 .principal section ul {
@@ -144,6 +148,8 @@ body {
 .container1 {
   display: flex;
   flex-direction: row; }
+  .container1 .dropdown {
+    display: none; }
 
 .container2, .container3 {
   background-color: rgba(243, 220, 241, 0.5);
@@ -181,7 +187,7 @@ body {
   50% {
     background-image: url(../imagenes/reunion.jpg); }
   75% {
-    background-image: url(../imagenes/preparacion.jpg); }
+    background-image: url(../imagenes/vasos.jpg); }
   100% {
     background-image: url(../imagenes/mesa.jpg); } }
 
@@ -246,21 +252,34 @@ body {
 @media (max-width: 767.98px) {
   .gridContainer {
     width: 100vw; }
+    .gridContainer .encabezado .container-fluid .logo {
+      width: 40%; }
     .gridContainer .mainForm {
       width: 100vw; }
       .gridContainer .mainForm h2 {
         font-size: 4rem; }
     .gridContainer .form__imput legend {
       font-size: 2.5rem; }
+    .gridContainer .carousel-item {
+      width: 100%;
+      height: 100%; }
+      .gridContainer .carousel-item img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain; }
+    .gridContainer .phone {
+      display: none; }
   .mainQuienes img {
     width: 80vw; }
   .principal {
     display: flex;
-    flex-direction: column;
-    align-self: center; }
+    flex-direction: column; }
   .container1 {
     display: flex;
     flex-direction: column; }
+  .galeria {
+    max-width: 100%;
+    margin: auto; }
   .servicio {
     display: flex;
     flex-direction: column;
@@ -268,16 +287,31 @@ body {
   .mainForm form {
     width: 100%; }
   .borde {
-    width: 100%; } }
+    width: 70%; } }
 
 /* // X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .gridContainer {
     width: 100vw; }
+    .gridContainer .encabezado .container-fluid .logo {
+      width: 60%; }
+    .gridContainer .carousel-item {
+      width: 100%;
+      height: 100%; }
+      .gridContainer .carousel-item img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain; }
+    .gridContainer .desktop {
+      display: none; }
+    .gridContainer .phone {
+      display: block; }
     .gridContainer .container1 {
       display: flex;
       flex-direction: column;
       width: 100vw; }
+      .gridContainer .container1 .dropdown {
+        display: block; }
     .gridContainer .container2, .gridContainer .container3, .gridContainer .container3 {
       width: 100%; }
     .gridContainer .mainQuienes img {
@@ -285,6 +319,11 @@ body {
       height: 18vh; }
     .gridContainer .mainForm .form__imput {
       width: 100%; }
+      .gridContainer .mainForm .form__imput legend {
+        padding: 1.5rem; }
+    .gridContainer .borde {
+      width: 70%;
+      padding: 5%; }
     .gridContainer .galeria {
       max-width: 100%;
       margin: auto; }

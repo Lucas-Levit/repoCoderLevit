@@ -2,18 +2,16 @@
     .encabezado{
         grid-area: encabezado;
         width: 100vw;
+        font-size: 7rem;
         }
         .container-fluid{
             background-color: rgba(243, 220, 241, 0.5);
+            
         }
-            .navbar-brand{
-                font-size: 3rem;
-            }
+            
             .nav-item{
-                font-size: 1.5rem;
-            
-            
                 .nav-link{
+                    font-size: 2rem;
                     &:hover{
                     color: #EA0EF2;
                     }
@@ -21,6 +19,7 @@
                     }
                     #navbarNav{
                         margin-right: 5rem;
+                        
                     }
                     }
             .logo{

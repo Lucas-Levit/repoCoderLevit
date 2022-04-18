@@ -40,11 +40,16 @@ body {
 /* ---------------------------------- index --------------------------------- */
 .gridContainer{
     .carousel-item{
+        width: 100vw;
         img{
-            height: 80vh;
+            height: 100%;
             object-fit: cover;
+            width: 100%;
     }
 }
+    .phone{
+        display: none;
+    }
 }
 /* ------------------------------ quienes somos ----------------------------- */
 
@@ -58,14 +63,17 @@ body {
     }
     .somos{
         h2{
-            margin-top: 50px;
+            margin-top: 5rem;
             font-size: 3rem;
+            margin-bottom: 2rem;
+            
         }
         p{
             text-align: $centro;
             font-size: 2rem;
-            line-height: 3rem;
+            line-height: 2rem;
             padding: 0 3rem;
+            margin-top: 0.3rem;
         }
     }
 }
@@ -123,6 +131,9 @@ body {
 }
     .container1{
         @include d-row;
+        .dropdown{
+            display: none;
+        }
     }
         .container2{
             background-color: rgba(243, 220, 241, 0.5);
@@ -237,6 +248,13 @@ body {
 @media (max-width: 767.98px) { 
 	.gridContainer {
 		width: 100vw;
+        .encabezado{
+            .container-fluid{
+                .logo{
+                    width: 40%
+                }
+            }
+        }
         .mainForm{
             width: 100vw;
             h2{
@@ -246,17 +264,35 @@ body {
         .form__imput legend{
             font-size: 2.5rem;
         }
+        .carousel-item{
+            width: 100%;
+            height: 100%;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                
+                
+                }
+        }
+        .phone{
+            display: none;
+        }
 	}
     .mainQuienes img {
         width: 80vw;
     }
     .principal {
         @include d-column;
-        align-self: center;
         
     }
     .container1{
-        @include d-column
+        @include d-column;
+        
+    }
+    .galeria{
+        max-width: 100%;
+        margin: auto;
     }
     .servicio{
         @include d-column;
@@ -266,7 +302,7 @@ body {
         width: 100%;
     }
     .borde{
-        width: 100%;
+        width: 70%;
     }
 
 }
@@ -274,10 +310,38 @@ body {
 @media (max-width: 575.98px) {
 	.gridContainer {
 		width: 100vw;
+        .encabezado{
+            .container-fluid{
+                .logo{
+                    width: 60%
+                }
+            }
+        }
+        .carousel-item{
+            width: 100%;
+            height: 100%;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                
+                
+                }
+        }
+        .desktop{
+            display: none;
+        }
+        .phone{
+            display: block;
+        }
+
 	
     .container1{
         @include d-column;
         width: 100vw;
+        .dropdown{
+            display: block;
+        }
     }
     .container2, .container3{
         width: 100%;
@@ -289,6 +353,13 @@ body {
     }
     .mainForm .form__imput {
         width: 100%;
+        legend{
+            padding: 1.5rem;
+        }
+    }
+    .borde{
+        width: 70%;
+        padding: 5%;
     }
     .galeria{
         max-width: 100%;
