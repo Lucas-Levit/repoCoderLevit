@@ -28,6 +28,7 @@ body {
 	grid-template-columns: repeat (1, 1fr) ;
 	grid-template-rows: auto;
 	grid-template-areas: "encabezado encabezado"
+                        "breadcrumbs breadcrumbs"
 						"main main" 
 						"zapato zapato";
     
@@ -35,23 +36,35 @@ body {
         grid-area: main;
         width: $ancho;
     }
+
 }
 
 /* ---------------------------------- index --------------------------------- */
 .gridContainer{
-    .carousel-item{
-        width: 100vw;
-        img{
-            height: 100%;
-            object-fit: cover;
-            width: 100%;
+    .desktop{
+        .carousel-item{
+            width: 100vw;
+            img{
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+            }
+            .carousel-caption{
+                p{
+                    font-size: 3rem;
+                    color: white;
+                    text-shadow: 2px 2px 1px #000;
+                }
+            
+            }
     }
 }
     .phone{
         display: none;
     }
 }
-/* ------------------------------ quienes somos ----------------------------- */
+
+/*-------------------------- quienes somos ----------------------------- */
 
 .mainQuienes{
     text-align: $centro;
@@ -74,6 +87,26 @@ body {
             line-height: 2rem;
             padding: 0 3rem;
             margin-top: 0.3rem;
+        }
+    }
+}
+.breadcrumbs{
+    grid-area: breadcrumbs;
+    font-size: 2rem;
+    height: 4rem;
+    background-color: #e57be9;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+    .breadcrumb{
+        .active{
+            color: #000
+        }
+        .breadcrumb-item{
+            a{
+                text-decoration: none;
+            }
         }
     }
 }
@@ -239,14 +272,35 @@ body {
 .borde{
     width: 50%;
     margin: 0 auto;
-    
+    .enviar{
+        text-align: center;
+    }
 }
 
 /* ------------------------ comienzo de media queries ----------------------- */
 
+/* // Small devices (landscape phones, less than 1120px) */
+@media (min-width:768px) and (max-width: 1120px){
+    .gridContainer{
+        width: 100vw;
+        .container2{
+            margin: 2rem;
+        }
+    }
+}
+/* // Small devices (landscape phones, less than 1250px) */
+@media (min-width:768px) and (max-width: 1250px){
+    .gridContainer{
+        width: 100vw;
+        .souvenir{
+            margin: 2rem;
+        }
+    }
+}
+
 /* // Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) { 
-	.gridContainer {
+.gridContainer {
 		width: 100vw;
         .encabezado{
             .container-fluid{
@@ -334,7 +388,6 @@ body {
         .phone{
             display: block;
         }
-
 	
     .container1{
         @include d-column;
@@ -384,4 +437,62 @@ body {
         width: 100%;
     }
 }
+}
+/* -------------------------------- error 404 ------------------------------- */
+.error404{
+    background-color: lightblue;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+
+
+    .ops{
+        font-size: 5rem;
+        color: rgb(10, 3, 71);
+        line-height: 8rem;
+        text-align: center;
+    }
+    .error{ 
+        font-size: 4rem;
+        color: rgb(10, 3, 71);
+        line-height: 8rem;
+        text-align: center;
+    }
+    .page{
+        font-size: 3rem;
+        color: rgb(10, 3, 71);
+        line-height: 8rem;
+        text-align: center;
+    }
+    .pobre{
+        width: 40vw;
+        text-align: center;
+        @media (max-width: 768px){width: 100vw;}
+        img{
+            width: 100%;
+        }
+        @media (max-width: 576px){width: 100vw;}
+        img{
+            width: 100%;
+        }
+    }
+
+    .boton{
+        margin-top: 1rem;
+        color: #fff;
+        font-size: 2rem;
+        padding: 2rem 4rem;
+        background-color: #36abbb;
+        border-radius: 10px;
+        border: none;
+        transition: all .4s;
+        &:hover {
+            color: #f1e9e3;
+            background-color: #261b83;
+            box-shadow: 4px 4px 5px;
+        }
+    }
 }

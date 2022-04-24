@@ -70,23 +70,27 @@ body {
   display: grid;
   grid-template-columns: repeat 1, 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "encabezado encabezado" "main main"  "zapato zapato"; }
+  grid-template-areas: "encabezado encabezado" "breadcrumbs breadcrumbs" "main main"  "zapato zapato"; }
   .gridContainer .main {
     grid-area: main;
     width: 100vw; }
 
 /* ---------------------------------- index --------------------------------- */
-.gridContainer .carousel-item {
+.gridContainer .desktop .carousel-item {
   width: 100vw; }
-  .gridContainer .carousel-item img {
+  .gridContainer .desktop .carousel-item img {
     height: 100%;
     object-fit: cover;
     width: 100%; }
+  .gridContainer .desktop .carousel-item .carousel-caption p {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 1px #000; }
 
 .gridContainer .phone {
   display: none; }
 
-/* ------------------------------ quienes somos ----------------------------- */
+/*-------------------------- quienes somos ----------------------------- */
 .mainQuienes {
   text-align: center;
   width: 100vw; }
@@ -103,6 +107,20 @@ body {
     line-height: 2rem;
     padding: 0 3rem;
     margin-top: 0.3rem; }
+
+.breadcrumbs {
+  grid-area: breadcrumbs;
+  font-size: 2rem;
+  height: 4rem;
+  background-color: #e57be9;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1rem; }
+  .breadcrumbs .breadcrumb .active {
+    color: #000; }
+  .breadcrumbs .breadcrumb .breadcrumb-item a {
+    text-decoration: none; }
 
 /* -------------------------- servicios adicionales ------------------------- */
 .principal section ul {
@@ -246,8 +264,24 @@ body {
 .borde {
   width: 50%;
   margin: 0 auto; }
+  .borde .enviar {
+    text-align: center; }
 
 /* ------------------------ comienzo de media queries ----------------------- */
+/* // Small devices (landscape phones, less than 1120px) */
+@media (min-width: 768px) and (max-width: 1120px) {
+  .gridContainer {
+    width: 100vw; }
+    .gridContainer .container2, .gridContainer .container3 {
+      margin: 2rem; } }
+
+/* // Small devices (landscape phones, less than 1250px) */
+@media (min-width: 768px) and (max-width: 1250px) {
+  .gridContainer {
+    width: 100vw; }
+    .gridContainer .souvenir, .gridContainer .extras {
+      margin: 2rem; } }
+
 /* // Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
   .gridContainer {
@@ -341,3 +375,54 @@ body {
         width: 100%; }
     .gridContainer .maps iframe {
       width: 100%; } }
+
+/* -------------------------------- error 404 ------------------------------- */
+.error404 {
+  background-color: lightblue;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .error404 .ops {
+    font-size: 5rem;
+    color: #0a0347;
+    line-height: 8rem;
+    text-align: center; }
+  .error404 .error {
+    font-size: 4rem;
+    color: #0a0347;
+    line-height: 8rem;
+    text-align: center; }
+  .error404 .page {
+    font-size: 3rem;
+    color: #0a0347;
+    line-height: 8rem;
+    text-align: center; }
+  .error404 .pobre {
+    width: 40vw;
+    text-align: center; }
+    @media (max-width: 768px) {
+      .error404 .pobre {
+        width: 100vw; } }
+    .error404 .pobre img {
+      width: 100%; }
+    @media (max-width: 576px) {
+      .error404 .pobre {
+        width: 100vw; } }
+    .error404 .pobre img {
+      width: 100%; }
+  .error404 .boton {
+    margin-top: 1rem;
+    color: #fff;
+    font-size: 2rem;
+    padding: 2rem 4rem;
+    background-color: #36abbb;
+    border-radius: 10px;
+    border: none;
+    transition: all .4s; }
+    .error404 .boton:hover {
+      color: #f1e9e3;
+      background-color: #261b83;
+      box-shadow: 4px 4px 5px; }
